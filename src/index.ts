@@ -12,3 +12,6 @@ logger.warn('stu901', true)
 logger.info('vwx234', { key: 'value' })
 logger.debug('yz5678', [1, 2, 3])
 logger.trace('abc999', new Error('This is an error object'))
+
+logger.info('198deb19', 'Can put', 'multiple arguments')
+logger.debug('b38a96fe', 'It will', { stringify: 'arguments' }, 4, 'ever')

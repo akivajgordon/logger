@@ -6,7 +6,7 @@ type LogLevel = (typeof logLevels)[number]
 const maxPrefixLength = Math.max(...logLevels.map((l) => l.length))
 
 class Logger {
-  private static log(level: LogLevel, tag: string, message: any): void {
+  private static log(level: LogLevel, tag: string, ...messages: any[]): void {
     const colorMap = {
       error: chalk.bgRed.whiteBright,
       warn: chalk.bgYellow.black,
@@ -29,8 +29,11 @@ class Logger {
     const consoleMethod = consoleMethodMap[level]
 
     const formattedTag = `[${tag}]`
-    const formattedMessage =
-      typeof message === 'string' ? message : JSON.stringify(message)
+    const formattedMessage = messages
+      .map((message) =>
+        typeof message === 'string' ? message : JSON.stringify(message),
+      )
+      .join(' ')
 
     // Check if the output supports color
     const output = `${prefix} ${formattedTag} ${formattedMessage}`
@@ -38,24 +41,24 @@ class Logger {
     consoleMethod(output)
   }
 
-  static error(tag: string, message: any): void {
-    this.log('error', tag, message)
+  static error(tag: string, ...messages: any[]): void {
+    this.log('error', tag, ...messages)
   }
 
-  static warn(tag: string, message: any): void {
-    this.log('warn', tag, message)
+  static warn(tag: string, ...messages: any[]): void {
+    this.log('warn', tag, ...messages)
   }
 
-  static info(tag: string, message: any): void {
-    this.log('info', tag, message)
+  static info(tag: string, ...messages: any[]): void {
+    this.log('info', tag, ...messages)
   }
 
-  static debug(tag: string, message: any): void {
-    this.log('debug', tag, message)
+  static debug(tag: string, ...messages: any[]): void {
+    this.log('debug', tag, ...messages)
   }
 
-  static trace(tag: string, message: any): void {
-    this.log('trace', tag, message)
+  static trace(tag: string, ...messages: any[]): void {
+    this.log('trace', tag, ...messages)
   }
 }
 
