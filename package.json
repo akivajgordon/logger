@@ -2,7 +2,7 @@
   "name": "@akivajgordon/logger",
   "version": "0.0.1",
   "description": "",
-  "main": "build/index.js",
+  "main": "build/lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predev": "npm run build",
@@ -11,9 +11,12 @@
     "watch:dev": "nodemon --watch .env --watch './build' --exec 'npm run start'",
     "start:dev": "nodemon build/index.js",
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "prepublish": "npm run build",
+    "preversion": "npm run build"
   },
-  "author": "",
+  "files": ["build"],
+  "author": "Akiva Gordon <akivag29@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.14.11",
