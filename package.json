@@ -1,6 +1,6 @@
 {
   "name": "@akivajgordon/logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "build/lib/index.js",
   "scripts": {
@@ -15,7 +15,9 @@
     "prepublish": "npm run build",
     "preversion": "npm run build"
   },
-  "files": ["build/lib"],
+  "files": [
+    "build/lib"
+  ],
   "author": "Akiva Gordon <akivag29@gmail.com>",
   "license": "ISC",
   "devDependencies": {
