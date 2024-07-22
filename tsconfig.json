@@ -7,6 +7,9 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./build",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationMap": true
+
   }
 }

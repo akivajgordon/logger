@@ -15,7 +15,7 @@
     "prepublish": "npm run build",
     "preversion": "npm run build"
   },
-  "files": ["build"],
+  "files": ["build/lib"],
   "author": "Akiva Gordon <akivag29@gmail.com>",
   "license": "ISC",
   "devDependencies": {
