@@ -1,4 +1,5 @@
-import chalk, { supportsColor } from 'chalk'
+import chalk from 'chalk'
+const { supportsColor } = chalk
 
 const logLevels = ['error', 'warn', 'info', 'debug', 'trace'] as const
 type LogLevel = (typeof logLevels)[number]

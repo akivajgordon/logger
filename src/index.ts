@@ -1,4 +1,4 @@
-import logger from './lib'
+import logger from './lib/index.js'
 
 logger.error('abc123', 'This is an error message')
 logger.warn('def456', 'This is a warning message')
